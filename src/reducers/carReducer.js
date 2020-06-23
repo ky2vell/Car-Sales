@@ -39,7 +39,7 @@ export const carReducer = (state = initialState, action) => {
             feature => feature.id !== action.payload.id
           )
         },
-        disabled: []
+        disabled: state.disabled.filter(i => i !== action.payload.id)
       };
     default:
       return state;

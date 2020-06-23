@@ -3,6 +3,5 @@ export const addFeature = feature => {
 };
 
 export const removeFeature = feature => {
-  console.log('Running!!!!!');
   return { type: 'REMOVE_FEATURE', payload: feature };
 };

@@ -29,7 +29,7 @@ export const carReducer = (state = initialState, action) => {
     case 'REMOVE_FEATURE':
       return {
         ...state,
-        additionalPrice: state.additionalPrice - action.payload.price,
+        additionalPrice: 0,
         car: {
           ...state.car,
           price: state.car.price - action.payload.price,

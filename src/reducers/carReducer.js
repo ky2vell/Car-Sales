@@ -12,7 +12,8 @@ export const initialState = {
     { id: 2, name: 'Racing detail package', price: 1500 },
     { id: 3, name: 'Premium sound system', price: 500 },
     { id: 4, name: 'Rear spoiler', price: 250 }
-  ]
+  ],
+  disabled: []
 };
 
 export const carReducer = (state = initialState, action) => {
@@ -24,7 +25,8 @@ export const carReducer = (state = initialState, action) => {
         car: {
           ...state.car,
           features: [...state.car.features, action.payload]
-        }
+        },
+        disabled: [...state.disabled, action.payload.id]
       };
     case 'REMOVE_FEATURE':
       return {
@@ -36,7 +38,8 @@ export const carReducer = (state = initialState, action) => {
           features: state.car.features.filter(
             feature => feature.id !== action.payload.id
           )
-        }
+        },
+        disabled: []
       };
     default:
       return state;
